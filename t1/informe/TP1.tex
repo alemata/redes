@@ -102,9 +102,17 @@ else:
 sniff(prn=arp_monitor_callback, filter="arp", store=0, timeout=to)
 \end{verbatim}
 
+\newpage
 
 \section{Tercera consigna}
 
+Para esta parte lo que hicimos fue capturar los paquetes \textit{ARP}, y crear un grafo dirigido de IPs. Cada nodo representa una dirección IP y existe un eje entre los nodos \textit{x} e \textit{y} si y solo si se observo un request ARP con source el IP del nodo \textit{x} y target igual al IP que representa el nodo \textit{y}. Consideramos que esta es la mejor forma para extraer informacion en cuanto a la topologia de la red en cuestión, asi como también sacar datos interesantes de la misma.\\\\
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.30]{graficos/arpGraph.png}
+  \caption{Gráfico dirigido de los distintos request ARP observados.}
+\end{figure}
 
  
 
