@@ -1,5 +1,0 @@
-\select@language {spanish}
-\contentsline {section}{\IeC {\'I}ndice}{2}{section*.1}
-\contentsline {section}{\numberline {1}Primera consigna}{3}{section.1}
-\contentsline {section}{\numberline {2}Segunda consigna}{3}{section.2}
-\contentsline {section}{\numberline {3}Tercera consigna}{3}{section.3}
