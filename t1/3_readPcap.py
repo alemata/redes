@@ -14,7 +14,7 @@ from pygraph.classes.digraph import digraph
 from pygraph.algorithms.searching import breadth_first_search
 from pygraph.readwrite.dot import write
 
-arps = rdpcap("/home/alemata/Desktop/alemata/facultad/redes/t1/mancuHome.pcap")
+arps = rdpcap("mancuHome.pcap")
 
 
 gr = digraph()
