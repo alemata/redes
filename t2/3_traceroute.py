@@ -6,18 +6,15 @@ def tracerouteICMP(host):
   ipPkg = IP(dst=host,ttl=1) / ICMP() / 'test del tp'
   noTimeOut = True
   noRoute = True
-  attempts = 3
   while noRoute:
     print "ttl = %d" %ipPkg.ttl
 
-    response = sr1(ipPkg, timeout=2, verbose=0)
+    #response = sr1(ipPkg, timeout=2, verbose=0)
+    response = sr1(ipPkg, verbose=0, timeout=3, retry=3, inter=1)
 
     if (response is None):
-      attempts -= 1
-      if (attempts == 0):
-        attempts = 3
-        ipPkg.ttl += 1
-        print " * "
+      ipPkg.ttl += 1
+      print " * "
 
     else:
       # miro la direccion origen de la respuesta
@@ -28,7 +25,7 @@ def tracerouteICMP(host):
       # miro el tipo de respuestas ICMP
       # echo replay, por ahora encontre la ruta
       respType = response.payload.type
-      if respType==1 :
+      if respType == 1 : # Segun el curtu aca va un 0
         noRoute = False
       # por ahora los otros tpos de replay los tomamos similar al time exceeded
       if noRoute :
