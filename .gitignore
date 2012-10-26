@@ -6,3 +6,7 @@
 **/**/*.toc
 **/**/*.synctex.gz
 .DS_Store
+*/.idea/**
+*.swp
+Ping.pyc
+*.iml
