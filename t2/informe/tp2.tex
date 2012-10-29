@@ -45,7 +45,6 @@
 \newpage
 
 \addcontentsline{toc}{section}{Índice}
-\tableofcontents
 
 % Main project
 
@@ -61,7 +60,7 @@ Para estimar el RTT a distintas partes del mundo tomamos IPs de diferentes parte
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
 \hline
-Direccion & IP & Lugar & Distancia \\
+Direccion & IP & Lugar & Distancia(km) \\
 \hline
 www.portal.gub.ui & 200.40.200.36 & Montevideo, Uruguay & 214 \\
 \hline
@@ -90,10 +89,10 @@ Para minimizar los posibles errores realizamos varias veces el experimento y en 
 Lo que podemos observar en el gráfico es la gran diferencia entre el RTT teórico (calculado suponiendo un enlace punto a punto directo con el IP) y el práctico. Con estos podemos corroborar la existencia de un \textit{delay de red} muy elevado. Esto sucede por varias razones:
 \begin{itemize}
 	\item No existe enlace punto a punto con cada IP. El paquete enviado debe pasar por varios \textit{routers} antes de llegar al IP elegido.
-	\item Cada \textit{router} agrega un delay directamente proporcional a lo saturado que se encuentre en el momento en el que tiene que \textit{forwardear} el paquete. 
+	\item Cada \textit{router} agrega un delay correspondiente a la sobrecarga o congestión de la red en el momento en el que tiene que \textit{forwardear} el paquete. 
 \end{itemize}
 
-En el gráfico podemos notar algo que en un principio nos parecio \textit{raro}. El RTT práctico a EEUU, aunque la distancia es mayor que a Uruguay, es bastante menor. Esto se debe a que no contamos con un enlace directo a Uruguay, sino que el paquete da varios saltos para alcanzar el destino. No asi con los EEUU, pais con el cual tenemos un enlace mas directo.  
+En el gráfico podemos notar algo que en un principio nos parecio \textit{raro}. El RTT práctico a EEUU, aunque la distancia es mayor que a Uruguay, es bastante menor. Esto se debe a que no contamos con un enlace directo a Uruguay, sino que el paquete da varios saltos para alcanzar el destino. No así con los EEUU, país con el cual tenemos un enlace más directo.  
 
 
 
