@@ -1,0 +1,29 @@
+www.portal.gub.ui => 200.40.200.36
+214 km
+pr: 298.5 ms
+Teorico: 2.14 ms
+
+www.presidencia.gov.co => 190.27.253.9 (bogota)
+4627 km
+pr: 330.8 ms
+Teorico: 46.27 ms
+
+www.usa.gov => 72.247.242.57
+8671 km
+pr: 258.7 ms
+Teorico: 86.71 ms
+
+www.comune.roma.it => 94.86.40.109
+11164.3 km
+pr:
+
+www.rusopedia.rt.com => 212.24.56.190
+13500 km
+pr: 370.4 ms
+Teorico: 135.00 ms
+
+www.jnto.go.gp => 210.165.34.236 #japon
+18500 km
+pr: 438.9 ms
+Teorico: 185.00 ms
+
