@@ -11,8 +11,7 @@ for x in range(int(sys.argv[2])):
 	if time != -1:
 		total = total + time;
 		print "Time = %s" % time	
-print total;
-print total / int(sys.argv[2])
+print "Promedio = %f" % (total / int(sys.argv[2]))
 
 
 
