@@ -33,6 +33,7 @@
 \materia{Teoría de las Comunicaciones}
 \submateria{Segundo Cuatrimestre de 2012}
 \titulo{Taller de Capa de Enlace}
+\subtitulo{Reentrega}
 \grupo{Taller N$^{\circ}$1}
 
 \integrante{Mancuso, Emiliano}{597/07}{emiliano.mancuso@gmail.com}
@@ -69,10 +70,11 @@ Lo interesante es ver que ocurre en algunos casos:
 \begin{itemize}
 \item dirección inexistente = el script se cuelga esperando la respuesta que nunca llega. 
 \item dirección de la maquina de origen = el paquete ARP no se envía.
-\item dirección Broadcast = pregunta por la dirección por lo que pasa lo mismo que si fuera una dirección inexistente 
-\item dirección de red = pregunta por la dirección por lo que pasa lo mismo que si fuera una dirección inexistente 
+\item dirección Broadcast = el script se cuelga esperando la respuesta que nunca llega. 
+\item dirección de red = el script se cuelga esperando la respuesta que nunca llega. 
 \end{itemize}
 
+Agregando un \textbf{timeout} podemos resolver el problema de que se cuelga el script.
 
 \section{Segunda consigna}
 
@@ -110,8 +112,7 @@ El script es el siguiente:
 \section{Tercera consigna}
 
 Para esta parte lo que hicimos fue capturar los paquetes \textit{ARP}, y crear un grafo dirigido de IPs. Cada nodo representa una dirección IP y existe un eje entre dos nodos \textit{x} e \textit{y} si y solo si, se observo un request ARP con \textbf{source} \= IP de \textit{x} y \textbf{target} \= IP de \textit{y}. 
- Consideramos que esta es la mejor forma para extraer información en cuanto a la topología de la red en cuestión, así como también sacar datos interesantes de la misma. \\
- 
+ Con este grafo describimos mejor la topología de la red, y ver el trafico interno de la misma. Descartamos el uso de un histograma pues nos interesaba mostrar entre quienes se envían los paquetes y no cada cuanto tiempo. \\
 
 \begin{figure}[H]
   \centering
@@ -123,10 +124,21 @@ Para esta parte lo que hicimos fue capturar los paquetes \textit{ARP}, y crear u
 La muestra fue obtenida de la casa de uno de los integrantes del grupo y la finalizamos al alcanzar los 300 paquetes ARP.  
 Si bien es una red pequeña pensamos que para este taller en particular al trabajar con paquetes ARP no influía tanto la cantidad de dispositivos.
 
-Inmediatamente nos damos cuenta que la IP 192.168.0.1 es la asignada al router, ya que ésta es la que más se comunica con el resto de los dispositivos. 
+Dispositivos conectados:
+\begin{itemize}
+  \item 2 Notebooks
+  \item 2 Celulares
+  \item 2 Desktop
+  \item 1 iPad
+  \item AppleTV
+\end{itemize}
+
+Inmediatamente nos damos cuenta que la \textbf{IP 192.168.0.1} es la asignada al router, ya que ésta es la que más se comunica con el resto de los dispositivos. Sin embargo, podemos ver como los dispositivos se comunican entre si y esto se debe a que al momento de las pruebas estábamos utilizando conexiones \textbf{ssh} y \textbf{Home Sharing} de iTunes para transmitir música.
+El host \textbf{192.168.0.102} es el que interactuaba como \textit{media center}. La mayoría de los dispositivos están siendo sincronizados todo el tiempo ya que están configurados bajo la misma cuenta de Apple.
+
 Otro caso interesante a estudiar es el de los nodos que tienen ejes dirigidos a si mismos. Esto sucede en los paquetes ARP que son del tipo \textit{gratuitous}. Este tipo de paquetes se mandan generalmente cuando un dispositivo se conecta a la red, avisando al resto de su ubicación. Son útiles también para: detectar IPs repetidas.
 
-Otro caso significativo el el nodo con IP 0.0.0.0, la cual no es una dirección válida. No pudimos saber con exactitud por que sucedió pero por lo que investigamos se pude deber a que el dispositivo envió el request antes de que se le haya asignado una IP válida. 
+Otro caso significativo el el nodo con IP 0.0.0.0, la cual no es una dirección válida. No pudimos saber con exactitud por que sucedió pero por lo que investigamos se pude deber a que el dispositivo envió el \textit{request} antes de que se le haya asignado una IP válida. 
 
 
  
