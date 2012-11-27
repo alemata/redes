@@ -74,8 +74,15 @@ detección de este tipo de ataques.
 
 En cuanto a la efectividad de este tipo de ataques creemos que depende de con cuanta conciencia se haga la configuración de  un servidor, por ejemplo a un servidor bien preparado se le puede realizar
 el escaneo de algunos puertos pero el servidor al detectarla puede bloquear el origen o aumentar los controles y medidas de seguridad, al intentar obtener mayor información o un ataque de mayor escala se ven
-comprometidos. Y también como mencionamos anteriormente de las contra medidas que se utilicen.
+comprometidos. Y también como mencionamos anteriormente de las contra medidas que se utilicen.\\
 
+Si se desconoce la existencia de un firewall con esta técnica se pueden inferir varias cosas, pero como dijimos antes depende la configuración del mismo. Por un lado de acuerdo a las técnicas que se
+utilicen se podría inferir si existe un firewall o no, y su alguna de sus configuraciones. Por ejemplo si se utilizan distintas formas o variantes del método, debido a que algunas se escabullen mejor entre
+los mismos al tener fallas con un método y éxitos con otro podemos inferir que tenemos una herramienta de control. Si se detecta un firewall también es posible que si se conocen IP permitidas por
+el mismo el escaneo se efectué sin problemas, o cause problemas para la IP a futuro.
+
+Creemos que un firewall bien configurado es una buena herramienta de control y de posible prevención, pero también se debe tener en cuenta los servicios que un host debe brindar y en ese caso las
+restricciones que el firewall deba o no tener y las vulnerabilidades que esto permite.
 
 \newpage
 \section{Segunda Consigna}
