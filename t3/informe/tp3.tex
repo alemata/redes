@@ -55,6 +55,28 @@
 \section{Primera consigna}
 
 
+En cuanto a la complejidad de los algoritmos, el \textit{Connect scan} realiza todo el 3-way handshake mientras que \textit{SYN scan} no termina la conexion, por lo tanto genera un paquete menos en la red, por lo que deberia ser mas rapido. Sin embargo en nuestra implementacion, y a pesar de lo expuesto anteriormente, el \textit{Connect scan} funciona mas rapido. Esto lo adjudicamos a que los sockets estan mejor implementados por lo que hace que el scan tarde menos aunque manejando una cantidad mayor de paquetes.\\
+
+Como una primer método de ataque y por si solo Port Scannin parece un método bastante inocuo. De hecho también puede ser utilizado para conocer el estado de los puertos en un sistema propio. Una primera
+reflexión puede hacer pensar que solo se trata de la detección de los puertos y sus estados.
+
+Pero una mirada mas profunda y un análisis mas objetivo revela que esto no es cierto, este método puede resultar de gran impacto contra un sistema, pues da un gran panorama del estado del sistema y sus
+posibles vulnerabilidades. Teniendo en cuenta esto Port Scaning se puede pensar por ejemplo como la base de un ataque de mayor escala. Una vez obtenida la información de los distintos puertos podría llegar
+a inferirse el tipo de sistema operativo utilizado, usarse otras técnicas para obtener mayor información sobre el sistema en si o las aplicaciones que tiene, incluso la función e información que maneja el
+host.\\
+
+La detección de puertos es reconocible, por supuesto dependiendo de la variante o la clase de reconocimiento que se este realizando varía la dificultad de la detección. En base a lo investigado 
+consideramos que la prevención contra este método es muy complicada, una posible manera es cerrar todos los puertos que no están siendo y no serán utilizados. Una mejor aproximación a lidiar con este
+problema es llevar y mantener un control sobre este tipo de ataques reportarlo en forma inmediata y analizar si existe un riesgo de un ataque de mayor complejidad.
+
+Por lo general para detectar el uso de este método se utilizan herramientas especificas de sistemas de detección de intruso (IDS) para la red, control de los logs del sistema, configurar firewalls para la
+detección de este tipo de ataques.
+
+En cuanto a la efectividad de este tipo de ataques creemos que depende de con cuanta conciencia se haga la configuración de  un servidor, por ejemplo a un servidor bien preparado se le puede realizar
+el escaneo de algunos puertos pero el servidor al detectarla puede bloquear el origen o aumentar los controles y medidas de seguridad, al intentar obtener mayor información o un ataque de mayor escala se ven
+comprometidos. Y también como mencionamos anteriormente de las contra medidas que se utilicen.
+
+
 \newpage
 \section{Segunda Consigna}
 
